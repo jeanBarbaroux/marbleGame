@@ -1,6 +1,12 @@
-import {type RouteConfig, route, index} from "@react-router/dev/routes"
+import type {RouteObject} from "react-router-dom";
+import HomePage from "./pages/HomePage.tsx";
+import PageNotFound from "./pages/PageNotFound.tsx";
+import DebugPage from "./pages/DebugPage.tsx";
 
-export default [
-    index("./main.tsx"),
-    route("/tile", "./level/components/Tile.tsx")
-] satisfies RouteConfig
+const routes: RouteObject[] = [
+    {path: "/", Component: HomePage},
+    {path: "/debug/:object", Component: DebugPage},
+    {path: "*", Component: PageNotFound}
+]
+
+export default routes;
