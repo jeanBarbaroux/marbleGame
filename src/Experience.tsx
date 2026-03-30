@@ -1,11 +1,11 @@
 import {OrbitControls} from "@react-three/drei";
-import Tile from "./level/components/Tile.tsx";
+import RotatingTile from "./level/components/RotatingTile.tsx";
 
 function Experience() {
     return (
         <>
             <OrbitControls makeDefault/>
-            <Tile/>
+            <RotatingTile/>
         </>
     )
 }
