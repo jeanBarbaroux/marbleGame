@@ -2,5 +2,8 @@ export type CubeProps = {
     position?: [number, number, number],
     scale?: [number, number, number],
     texture?: string,
-    name?: string
+    name?: string,
+    rotation?: [number, number, number],
+    restitution?: number,
+    friction?: number
 }
