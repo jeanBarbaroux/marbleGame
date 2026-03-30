@@ -1,8 +1,8 @@
 import type {CubeProps} from "../props/CubeProps.ts";
 import { useControls } from "leva";
 
-function Cube({position=[0, 0, 0], scale=[1, 1, 1], texture="red"}: CubeProps) {
-    const debugObject = useControls({
+function Cube({position=[0, 0, 0], scale=[1, 1, 1], texture="red", name="cube"}: CubeProps) {
+    const debugObject = useControls(name,{
         cubeColor: texture,
         cubeScale: scale
     })
