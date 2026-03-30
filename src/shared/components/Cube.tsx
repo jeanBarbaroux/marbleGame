@@ -1,14 +1,17 @@
 import type {CubeProps} from "../props/CubeProps.ts";
-import {Html} from "@react-three/drei";
+import { useControls } from "leva";
 
-function Cube({position=[0, 0, 0], scale=[1, 1, 1], texture="red", debug=false}: CubeProps) {
+function Cube({position=[0, 0, 0], scale=[1, 1, 1], texture="red"}: CubeProps) {
+    const debugObject = useControls({
+        cubeColor: texture,
+        cubeScale: scale
+    })
 
     return <>
-        <mesh position={position} scale={scale}>
+        <mesh position={position} scale={debugObject.cubeScale}>
             <boxGeometry args={[1, 1, 1]}/>
-            <meshBasicMaterial color={texture}/>
+            <meshBasicMaterial color={debugObject.cubeColor}/>
         </mesh>
-        {debug && <Html>Hey</Html>}
     </>
 }
 
